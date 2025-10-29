@@ -1,16 +1,72 @@
-# React + Vite
+Balance Tracker React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React application to track your account balance and expenses. Users can add money to their account, log transactions with categories, and remove transactions. The app also supports a dark mode toggle.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Add Money: Add funds to your account balance.
 
-## React Compiler
+Track Expenses: Log transactions with a category and amount.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Remove Transactions: Delete a transaction and update the balance.
 
-## Expanding the ESLint configuration
+Total Spent: View the total amount spent across all transactions.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Dark Mode: Toggle between light and dark themes for a better viewing experience.
+
+## Demo: https://expense-tracker-rust-psi.vercel.app/ 
+
+## Usage
+
+Add Money:
+Enter an amount in the "Add money" input field and click the "Add money into account" button. The balance will update accordingly.
+
+Add a Transaction:
+
+Enter a transaction description.
+
+Enter the transaction amount.
+
+Select a category from the dropdown.
+
+Click "Add Transaction" to log it. The balance will decrease by the transaction amount.
+
+Remove a Transaction:
+Click the "Remove Transaction" button next to a transaction to delete it and restore the amount to your balance.
+
+Toggle Dark Mode:
+Click the moon/sun button at the top to switch between dark and light themes.
+
+## Code Overview
+
+## React Hooks:
+
+useState for managing state (balance, transactions, inputs, dark mode).
+
+useEffect to apply the dark mode class to the body element.
+
+## Transaction Management:
+
+Transactions are stored as objects with category, text, and amount.
+
+Adding or removing transactions updates the balance accordingly.
+
+## Total Spending:
+
+Calculated using reduce on the transaction array.
+
+## Technologies Used
+
+React (with Hooks)
+
+JavaScript
+
+HTML & CSS
+
+## Future Improvements
+
+Persist data in localStorage or a backend database.
+
+Add charts to visualize spending per category.
+
+Improve UI/UX with better styling and animations.
